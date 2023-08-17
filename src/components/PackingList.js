@@ -8,16 +8,17 @@ const initialItems = [
 
 function PackingList(props) {
     return (
-        <ul className='list'>
-            {
-                initialItems.map(item => {
-                    return <Item key={item.id} item={item}/>
-                })
-            }
-        </ul>
+        <div className='list'>
+           <ul>
+               {
+                   initialItems.map(item => {
+                       return <Item key={item.id} item={item}/>
+                   })
+               }
+           </ul>
+        </div>
     );
 }
-
 const Item = ({item}) => {
     return (<li>
         <input type='checkbox' checked={item.packed}/>
@@ -30,6 +31,4 @@ const Item = ({item}) => {
     </li>
 )
 }
-
-
 export default PackingList;

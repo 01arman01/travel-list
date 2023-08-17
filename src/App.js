@@ -7,7 +7,7 @@ import Stats from "./components/Stats";
 
 function App() {
     return (
-        <div>
+        <div className='App'>
             <Logo/>
             <Form/>
             <PackingList/>
