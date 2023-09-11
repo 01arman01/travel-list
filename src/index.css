@@ -76,7 +76,7 @@ input {
   background-color: #5a3e2b;
   color: #ffebb3;
   padding: 4rem 0;
-
+  min-height: 300px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -106,6 +106,7 @@ input {
 }
 
 .list li {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1.2rem;

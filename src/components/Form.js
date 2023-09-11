@@ -2,23 +2,23 @@ import React, {useState} from 'react';
 
 
 
-function Form(props) {
+function Form({onAddDataItem}) {
 
     const [description, setDescription]=useState('')
     const [quantity,setQuantity]=useState(1)
     const hendleSubmite = (e) => {
         e.preventDefault()
-        console.log(e)
         const newItem = {
-            id: new Date.now(),
+            id:  Date.now(),
             description,
             quantity,
             packed:false
         }
         console.log(newItem)
+        onAddDataItem(newItem)
+        setDescription('')
+        setQuantity(1)
     }
-    // console.log(quantity)
-    // console.log(description)
     return (
         <form className='add-form' onSubmit={hendleSubmite}>
             <h3>What do you need for your 😍 trip?</h3>
@@ -36,5 +36,4 @@ function Form(props) {
         </form>
     );
 }
-
 export default Form;
