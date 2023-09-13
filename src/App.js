@@ -24,15 +24,29 @@ function App() {
             }else return item
         }))
     }
+
     const  onDeleteDataItem = (id)=>{
         setData(data.filter(item=>item.id !== id))
     }
-    console.log(data[0]?.packed)
+
+    const onClearItems = ()=>{
+        const confirmed = window.confirm('want do you delete all items?')
+        if(confirmed){
+            setData([])
+        }
+
+    }
+
     return (
         <div className='App'>
             <Logo/>
             <Form  onAddDataItem={onAddDataItem}/>
-            <PackingList data={data} onChangeCheckedItem={onChangeCheckedItem} onDeleteDataItem={onDeleteDataItem}/>
+            <PackingList
+                data={data}
+                onChangeCheckedItem={onChangeCheckedItem}
+                onDeleteDataItem={onDeleteDataItem}
+                onClearItems={onClearItems}
+            />
             <Stats items={data}/>
         </div>
     );

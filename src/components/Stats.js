@@ -7,7 +7,7 @@ function Stats({items}) {
         </p>)
     }
     const numItems = items.length
-    const numPackedItems = items.filter(item=>item.packed === true).length
+    const numPackedItems = items.filter(item=>item.packed).length
     const percent = Math.round(numPackedItems * 100 / numItems)
     return (
         <footer className='stats'>
